@@ -12,9 +12,10 @@ public class InitiateProject{
 		System.out.println("                     /    |    \\  |_|  |_> >   Y  \\/ __ \\_");
 		System.out.println("                     \\____|__  /____/   __/|___|  (____  /");
 		System.out.println("                             \\/     |__|        \\/     \\/ ");
-		System.out.println("Story: TBD");
-		System.out.println("Gengre: Text-based Dungeon crawler");
-		System.out.println("Creators: Sebastian \"Zorobay\" Hegardt, Sebastian \"Snyken\" Senyk, Isak \"Circusfreak\" Lindhé");
+		System.out.println(" __________________________________________________________________________________________");
+		System.out.println("|\t \t \t \t      Story: TBD \t \t \t \t \t   |");
+		System.out.println("|\t \t \t Gengre: Text-based Dungeon crawler\t \t \t \t   |");
+		System.out.println("|Creators: Sebastian \"Zorobay\" Hegardt, Sebastian \"Snyken\" Senyk, Isak \"Circusfreak\" Lindhé|");
 	}
 	
 }
