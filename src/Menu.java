@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 
-public class Menu {
+public class Menu extends NewGame{
 	static Scanner s = new Scanner(System.in);
 	
-	private static void showMenuText(){
+	private static void showMenuText(){ //Displays the menu graphics and options
 
 		System.out.println("              __________                   __               __   ");
 		System.out.println("              \\______   \\_______  ____    |__| ____   _____/  |_ ");
@@ -24,8 +24,6 @@ public class Menu {
 		System.out.println("|Creators: Sebastian \"Zorobay\" Hegardt, Sebastian \"Snyken\" Senyk, Isak \"Circusfreak\" Lindhé|");
 		System.out.println("\n\n" + "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ " + 
 		"\n\t\t\t\t      (1)NEW GAME\n\t\t\t\t\t(2)LOAD");
-		
-		getChosenOption(); //What did the player choose, New Game or Load game?
 	}
 	private static int getChosenOption(){ //returns and integer depending on whether the player chose to start		
 		int PlayerChoice;                //a new game or load an old save  
@@ -46,8 +44,14 @@ public class Menu {
 			}
 		}
 	}
-	public static void Start(){
+	public static void initiateMenu(){ //is called by main, and takes action based on what getChosenOption returned
 		showMenuText();
-		getChosenOption();
+		int option = getChosenOption();
+		
+		if (option == 1){
+			displayIntroText();
+			
+		}
+	
 	}
 }
