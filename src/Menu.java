@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Menu extends NewGame{
 	static Scanner s = new Scanner(System.in);
 	
@@ -32,11 +31,9 @@ public class Menu extends NewGame{
 			PlayerChoice = s.nextInt();
 			
 			if (PlayerChoice == 1){
-				System.out.println("Creating New Game!");
 				return 1;
 			}
 			else if (PlayerChoice == 2){
-				System.out.println("Loading Previous Game!");
 				return 2;
 			}
 			else{
@@ -49,8 +46,7 @@ public class Menu extends NewGame{
 		int option = getChosenOption();
 		
 		if (option == 1){
-			displayIntroText();
-			
+			startNewGame();
 		}
 	
 	}
