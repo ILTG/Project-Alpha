@@ -2,27 +2,27 @@ import java.util.Scanner;
 
 public class Menu extends NewGame{
 	static Scanner s = new Scanner(System.in);
-	
-	private static void showMenuText(){ //Displays the menu graphics and options
+	private static String menuText(){ //Displays the menu graphics and options
 
-		System.out.println("              __________                   __               __   ");
-		System.out.println("              \\______   \\_______  ____    |__| ____   _____/  |_ ");
-		System.out.println("               |     ___/\\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\");
-		System.out.println("               |    |     |  | \\(  <_> )  |  \\  ___/\\  \\___|  |  ");
-		System.out.println("               |____|     |__|   \\____/\\__|  |\\___  >\\___  >__|  ");
-		System.out.println("                                      \\______|    \\/     \\/      ");
-		System.out.println("                        _____  .__         .__            ");
-		System.out.println("                       /  _  \\ |  | ______ |  |__ _____   ");
-		System.out.println("                      /  /_\\  \\|  | \\____ \\|  |  " + "\\" + "\\__  \\  ");
-		System.out.println("                     /    |    \\  |_|  |_> >   Y  \\/ __ \\_");
-		System.out.println("                     \\____|__  /____/   __/|___|  (____  /");
-		System.out.println("                             \\/     |__|        \\/     \\/ ");
-		System.out.println(" __________________________________________________________________________________________");
-		System.out.println("|\t \t \t \t      Story: TBD \t \t \t \t \t   |");
-		System.out.println("|\t \t \t Gengre: Text-based Dungeon crawler\t \t \t \t   |");
-		System.out.println("|Creators: Sebastian \"Zorobay\" Hegardt, Sebastian \"Snyken\" Senyk, Isak \"Circusfreak\" Lindhé|");
-		System.out.println("\n\n" + "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ " + 
-		"\n\t\t\t\t      (1)NEW GAME\n\t\t\t\t\t(2)LOAD");
+		return 	 "                   __________                   __               __   \n" + 
+				 "                   \\______   \\_______  ____    |__| ____   _____/  |_ \n" + 
+	             "                    |     ___/\\_  __ \\/  _ \\   |  |/ __ \\_/ ___\\   __\\\n" + 
+				 "                    |    |     |  | \\(  <_> )  |  \\  ___/\\  \\___|  |  \n" + 
+	             "                    |____|     |__|   \\____/\\__|  |\\___  >\\___  >__|  \n" + 
+				 "                                           \\______|    \\/     \\/      \n" + 
+	             "                             _____  .__         .__            \n" + 
+				 "                            /  _  \\ |  | ______ |  |__ _____   \n" + 
+	             "                           /  /_\\  \\|  | \\____ \\|  |  " + "\\" + "\\__  \\  \n" + 
+				 "                          /    |    \\  |_|  |_> >   Y  \\/ __ \\_\n" + 
+	             "                          \\____|__  /____/   __/|___|  (____  /\n" + 
+				 "                                  \\/     |__|        \\/     \\/ \n" + 
+	             " __________________________________________________________________________________________\n" + 
+				 "|\t \t \t      Story: TBD \t \t \t       |\n" + 
+	             "|\t \t Gengre: Text-based Dungeon crawler \t\t       |\n" + 
+				 "|Creators: Sebastian \"Zorobay\" Hegardt, Sebastian \"Snyken\" Senyk, Isak \"Circusfreak\" Lindhé|\n" + 
+	             "\n\n" + "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ \n" + 
+				 "\n\t\t\t     (1)NEW GAME"+ 
+	             "\n\t\t\t     (2)LOAD";
 	}
 	private static int getChosenOption(){ //returns and integer depending on whether the player chose to start		
 		int PlayerChoice;                //a new game or load an old save  
@@ -42,11 +42,13 @@ public class Menu extends NewGame{
 		}
 	}
 	public static void initiateMenu(){ //is called by main, and takes action based on what getChosenOption returned
-		showMenuText();
+		InitiateProject.gui.setConsoleOutput(menuText()); //Sets the console output to the menu text
+		
 		int option = getChosenOption();
 		
 		if (option == 1){
 			startNewGame();
+			
 		}
 	
 	}
