@@ -1,10 +1,8 @@
 import java.awt.Color;
 import java.awt.Container;
-import java.awt.FlowLayout;
 import java.awt.Font;
 
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 
@@ -67,7 +65,6 @@ public class GUI extends JFrame{
 	}
 	public void setConsoleOutputColor(int r, int g, int b){
 		ConsoleOutput.setForeground(new Color(r, g, b));
-		ConsoleOutput.repaint();
 	}
 	public void setConsoleOutputColor(String s){
 		String s1 = s.toLowerCase();
