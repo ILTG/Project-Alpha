@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Menu extends NewGame{
 	static Scanner s = new Scanner(System.in);
-	private static String menuText(){ //Displays the menu graphics and options
+	private static boolean userIsInMenu = true;
+	public static String getMenuText(){ //Displays the menu graphics and options
 
 		return 	 "                   __________                   __               __   \n" + 
 				 "                   \\______   \\_______  ____    |__| ____   _____/  |_ \n" + 
@@ -24,32 +25,11 @@ public class Menu extends NewGame{
 				 "\n\t\t\t     (1)NEW GAME"+ 
 	             "\n\t\t\t     (2)LOAD";
 	}
-	private static int getChosenOption(){ //returns and integer depending on whether the player chose to start		
-		int PlayerChoice;                //a new game or load an old save  
-		
-		while (true){
-			PlayerChoice = s.nextInt();
-			
-			if (PlayerChoice == 1){
-				return 1;
-			}
-			else if (PlayerChoice == 2){
-				return 2;
-			}
-			else{
-				; //One more time =)
-			}
-		}
-	}
-	public static void initiateMenu(){ //is called by main, and takes action based on what getChosenOption returned
-		InitiateProject.gui.setConsoleOutput(menuText()); //Sets the console output to the menu text
-		
-		int option = getChosenOption();
-		
-		if (option == 1){
-			startNewGame();
-			
-		}
 	
+	public static boolean getUserInMenu(){  //This helps the listener for the JTextField to know if it should listen
+		return userIsInMenu;							//For "1" and "2", which are the options in the menu but not in-game.
+	}
+	public static void setUserInMenu(boolean isInMenu){
+		userIsInMenu = isInMenu;
 	}
 }
