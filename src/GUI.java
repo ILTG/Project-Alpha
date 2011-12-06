@@ -79,7 +79,6 @@ public class GUI extends JFrame{
 		case "pink": ConsoleOutput.setForeground(Color.PINK); break;
 		case "BLACK": ConsoleOutput.setForeground(Color.BLACK); break;
 		case "orange": ConsoleOutput.setForeground(Color.ORANGE); break;
-		case "gray": ConsoleOutput.setForeground(Color.GRAY); break;
 		case "cyan": ConsoleOutput.setForeground(Color.CYAN); break;
 		default: System.out.println("Not a pre-defined color"); break;
 		}
