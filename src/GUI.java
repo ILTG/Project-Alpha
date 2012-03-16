@@ -11,18 +11,19 @@ public class GUI extends JFrame{
 	ConsoleInputListener listener = new ConsoleInputListener(); //Declare a ConsoleInput Listener
 	
 	//Declare class variables
-	private JTextPane ConsoleOutput = new JTextPane(); //The game communicates to the player through this JLabel
-	private JTextField ConsoleInput = new JTextField(); //The filed where the player will input data
+	private JTextPane ConsoleOutput = new JTextPane(); //The game communicates to the player through this JTextPane
+	private JTextField ConsoleInput = new JTextField(); //The field where the player will input data
 	private JFrame frame = new JFrame();
 	
 	int WIDTH = 600; //Set the constant height and width of some components
 	int HEIGHT = 450;
 	
-	
+	public void flushConsole(){
+		System.out.flush();
+	}
 	public GUI(String Menu){  //Constructor, will add the menu to the JTextPane
 		ConsoleOutput.setText(Menu);
 	}
-	
 	public void initiateGUI(){
 		System.out.println("Creating GUI...");
 		
@@ -66,19 +67,7 @@ public class GUI extends JFrame{
 	public void setConsoleOutputColor(int r, int g, int b){
 		ConsoleOutput.setForeground(new Color(r, g, b));
 	}
-	public void setConsoleOutputColor(String s){
-		String s1 = s.toLowerCase();
-		
-		switch(s1){
-		case "red": ConsoleOutput.setForeground(Color.RED); break; 
-		case "green": ConsoleOutput.setForeground(Color.GREEN); break;
-		case "blue": ConsoleOutput.setForeground(Color.BLUE); break;
-		case "pink": ConsoleOutput.setForeground(Color.PINK); break;
-		case "BLACK": ConsoleOutput.setForeground(Color.BLACK); break;
-		case "orange": ConsoleOutput.setForeground(Color.ORANGE); break;
-		case "cyan": ConsoleOutput.setForeground(Color.CYAN); break;
-		default: System.out.println("Not a pre-defined color"); break;
-		}
+	public void setConsoleOutputColor(Color c){
+		ConsoleOutput.setForeground(c); 
 	}
-
 }

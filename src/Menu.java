@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Menu extends NewGame{
+public class Menu{
 	static Scanner s = new Scanner(System.in);
 	private static boolean userIsInMenu = true;
 	public static String getMenuText(){ //Displays the menu graphics and options
