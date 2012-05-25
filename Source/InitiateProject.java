@@ -1,10 +1,11 @@
 public class InitiateProject{
-	public static GUI gui = new GUI(Menu.getMenuText());  //The public GUI object that will be used everywhere, adds the menu text
-													      ////Produce the menu text, with options to start a NEW game or LOAD and old one
+	public static GUI gui = new GUI();  //The public GUI object that will be used everywhere. Initiates the GUI
+	public static Inventory inv = new Inventory(400,400);
+	
 	public static void main (String [] args){
 		 
-		gui.initiateGUI();//Create and show GUI
-		 
+		gui.setConsoleOutput(Menu.getMenuText()); //Create the menu text
+		
 	
 	}
 	

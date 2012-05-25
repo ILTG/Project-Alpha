@@ -20,7 +20,6 @@ public class Inventory extends JPanel {
 		frame = new JFrame();
 	
 		frame.setSize(x, y);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.add(this);
 		frame.setLayout(null);
 		setLayout(null);

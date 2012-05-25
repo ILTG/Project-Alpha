@@ -9,63 +9,59 @@ import javax.swing.JTextPane;
 
 public class GUI extends JFrame{
 	
-	ConsoleInputListener listener = new ConsoleInputListener(); //Declare a ConsoleInput Listener
+	private ConsoleInputListener listener = new ConsoleInputListener(); //Declare a ConsoleInput Listener
 	
 	//Declare class variables
-	private JTextPane ConsoleOutput = new JTextPane(); //The game communicates to the player through this JTextPane
-	private JTextField ConsoleInput = new JTextField(); //The field where the player will input data
-	private JFrame frame = new JFrame();
-	private JPanel panel = new JPanel();
+	public JTextPane ConsoleOutput; 
+	public JTextField ConsoleInput; 
+	public JFrame frame;
+	public JPanel panel;
 	
 	private final int WIDTH = 600; //Set the constant height and width of some components
-	private final int HEIGHT = 450;
+	private final int HEIGHT = 500;
 	
-	public void flushConsole(){
-		System.out.flush();
+	public GUI(){  //Constructor, will add the menu to the JTextPane
+		initiateGUI();
 	}
-	public GUI(String Menu){  //Constructor, will add the menu to the JTextPane
-		ConsoleOutput.setText(Menu);
-	}
-	public void initiateGUI(){
+	private void initiateGUI(){
 		System.out.println("Creating GUI...");
 		
 		//---------------------------------------------------------------------
 		
+		ConsoleOutput = new JTextPane();   //The game communicates to the player through this JTextPane
 		ConsoleOutput.setEditable(false);  //Setup the TextPane where all the output will be displayed
 		ConsoleOutput.setBackground(Color.BLACK);
 		ConsoleOutput.setForeground(Color.GREEN);
 		ConsoleOutput.setFont(new Font("Lucida Console", Font.PLAIN, 10));
-		ConsoleOutput.setBounds(0, 0, WIDTH , HEIGHT);
+		ConsoleOutput.setBounds(0, 0, WIDTH , HEIGHT-57); 
 		
 		//----------------------------------------------------------------------
 		
+		ConsoleInput = new JTextField(); //The field where the player will input data
 		ConsoleInput.setBackground(Color.WHITE);
 		ConsoleInput.setForeground(Color.PINK);
-		ConsoleInput.setBounds(0,HEIGHT-60,WIDTH,20); //Should add a listener if the frame is resized
+		ConsoleInput.setBounds(0,HEIGHT-57,WIDTH,20); //The top bar seems to be 27 pixels high...
 		ConsoleInput.addActionListener(listener);
 		
-		
 		//-----------------------------------------------------------------------
 		
-		//Container con = frame.getContentPane();  //Set background color to black
-		//con.setBackground(Color.BLACK);
-		
-		//-----------------------------------------------------------------------
-		
-		frame.setSize(WIDTH, HEIGHT); //Setup frame
-		frame.setResizable(true);
+		frame = new JFrame();
+		frame.setSize(WIDTH, HEIGHT); 
+		frame.setResizable(false);
 		frame.setLayout(null);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 		
 		//-----------------------------------------------------------------------
-		
+		panel = new JPanel();
 		panel.setBounds(0,0,WIDTH, HEIGHT);
 		panel.setLayout(null);
-		panel.add(ConsoleInput);
-		panel.add(ConsoleOutput);
 		frame.add(panel);
+		panel.add(ConsoleOutput);
+		panel.add(ConsoleInput);
+	
 	}
+	
 	public void setConsoleOutput(String output){
 		ConsoleOutput.setText(output);
 	}
@@ -81,4 +77,8 @@ public class GUI extends JFrame{
 	public void setConsoleOutputColor(Color c){
 		ConsoleOutput.setForeground(c); 
 	}
+	public void flushConsole(){
+		System.out.flush();
+	}
+	
 }
