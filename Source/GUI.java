@@ -24,7 +24,8 @@ public class GUI extends JFrame{
 		initiateGUI();
 	}
 	private void initiateGUI(){
-		System.out.println("Creating GUI...SEBBE ÄNDRAR!");
+		System.out.println("Creating GUI...fuuuk");
+		
 		
 		//---------------------------------------------------------------------
 		
